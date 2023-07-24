@@ -7,7 +7,7 @@ public class ControleRemoto implements Controlador {
 
     //métodos especiais
     public ControleRemoto(){
-        this.volume = 50;
+       this.volume = 50;
         this.ligado = false;
         this.tocando = false;
     }
@@ -46,6 +46,9 @@ public class ControleRemoto implements Controlador {
         System.out.println("Está ligado? " + this.getLigado());
         System.out.println("Está tocando? " + this.getTocando());
         System.out.println("Volume: " + this.getVolume());
+        for(int i = 0; i <= getVolume(); i += 10){
+            System.out.print(" | ");
+        }
     }
 
     @Override
@@ -55,7 +58,7 @@ public class ControleRemoto implements Controlador {
 
     @Override
     public void maisVolume() {
-        if(this.getLigado() == true){
+        if(this.getLigado()){
             this.setVolume(this.getVolume() + 5);
         }
     }
